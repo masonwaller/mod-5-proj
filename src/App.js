@@ -1,24 +1,22 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {useSelector, useDispatch} from 'react-redux'
+import {changeLogged} from './actions';
+import Maps from './components/Maps'
+import Search from './components/Search'
+
 
 function App() {
+  const logged = useSelector(state => state.logged)
+  const dispatch = useDispatch()
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        {(!logged) ? 
+        <h1>hello</h1> : console.log("hi")}
+        <button onClick={() => dispatch(changeLogged(5))}>click</button>
       </header>
+      <Search />
+      <Maps />
     </div>
   );
 }
