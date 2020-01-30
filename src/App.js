@@ -6,6 +6,7 @@ import Search from './components/Search'
 
 
 function App() {
+  console.log(process.env.REACT_APP_MAPS_API_KEY)
   const logged = useSelector(state => state.logged)
   const dispatch = useDispatch()
   return (

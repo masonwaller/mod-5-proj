@@ -3,7 +3,7 @@ import React from 'react'
 import './Maps.css'
 import {useSelector} from 'react-redux'
 
-
+const api = process.env.REACT_APP_MAPS_API_KEY
 
 function Maps(props) {
 
@@ -25,5 +25,5 @@ function Maps(props) {
 }
 
 export default GoogleApiWrapper({
-    apiKey: 'AIzaSyBF9L7qrd3ZIYcPAcEqLErZg3JldxeBQSY'
+    apiKey: process.env.REACT_APP_MAPS_API_KEY
   })(Maps);
