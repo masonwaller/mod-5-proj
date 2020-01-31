@@ -1,24 +1,28 @@
 import React from 'react';
-import {useSelector, useDispatch} from 'react-redux'
-import {changeLogged} from './actions';
 import Maps from './components/Maps'
 import Search from './components/Search'
+import Login from './components/Login'
+import Signup from './components/Signup'
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 
 function App() {
-  console.log(process.env.REACT_APP_MAPS_API_KEY)
-  const logged = useSelector(state => state.logged)
-  const dispatch = useDispatch()
+
   return (
+    <Router>
     <div className="App">
-      <header className="App-header">
-        {(!logged) ? 
-        <h1>hello</h1> : console.log("hi")}
-        <button onClick={() => dispatch(changeLogged(5))}>click</button>
-      </header>
+    <Route exact path='/login'>
+      <Login />
+      </Route>
+      <Route exact path='/signup'>
+        <Signup />
+      </Route>
+      <Route exact path="/">
       <Search />
       <Maps />
+      </Route>
     </div>
+    </Router>
   );
 }
 
