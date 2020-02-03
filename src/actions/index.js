@@ -12,3 +12,10 @@ export const changeLocation = (lat, long) => {
         long: long
     }
 }
+
+export const changeAdd = (address) => {
+    return {
+        type: 'ADDY',
+        address: address
+    } 
+}
