@@ -1,6 +1,5 @@
 import React from 'react';
 import Maps from './components/Maps'
-import Search from './components/Search'
 import Login from './components/Login'
 import Signup from './components/Signup'
 import Navbar from './Navbar'
@@ -20,7 +19,6 @@ function App() {
         <Signup />
       </Route>
       <Route exact path="/">
-      <Search />
       <Maps />
       </Route>
     </div>
