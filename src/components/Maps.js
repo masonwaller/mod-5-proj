@@ -9,6 +9,7 @@ function Maps(props) {
     width: "75%",
     height: "75%"
   };
+  console.log(useSelector(state=>state.radius))
   return (
     <div>
       <div className="divStyle">
@@ -20,16 +21,17 @@ function Maps(props) {
           lat: useSelector(state => state.coords.lat),
           lng: useSelector(state => state.coords.long)
         }}
-      >
+        
+      >{useSelector(state => state.radius).map(place => <Marker key={place.id} position={{lat: place.geometry.location.lat, lng: place.geometry.location.lng}}/>)}
         <Marker position={{lat: useSelector(state => state.coords.lat), lng: useSelector(state => state.coords.long)}}/>
       </Map>
-      <h1>hi</h1>
-      <h1>hi</h1>
-      <h1>hi</h1>
-      <h1>hi</h1>
-      <h1>hi</h1>
-      <h1>hi</h1>
-      <h1>hi</h1>
+      <h1>loading</h1>
+      <h1>loading</h1>
+      <h1>loading</h1>
+      <h1>loading</h1>
+      <h1>loading</h1>
+      <h1>loading</h1>
+      <h1>loading</h1>
       </div>
       <div>
       <Search/>

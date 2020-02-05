@@ -19,3 +19,10 @@ export const changeAdd = (address) => {
         address: address
     } 
 }
+
+export const changeRadius = (num) => {
+    return {
+        type: 'RADIUS',
+        radius: num
+    }
+}
