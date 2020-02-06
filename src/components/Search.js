@@ -6,7 +6,7 @@ import PlacesAutocomplete, {
   getLatLng
 } from "react-places-autocomplete";
 import { Dropdown } from "semantic-ui-react";
-import axios from 'axios';
+
 
 function Search() {
   const dispatch = useDispatch();
@@ -63,7 +63,7 @@ function Search() {
 
   return (
     <div>
-      <button onClick={() => getLocation()}>click2</button>
+      <button onClick={() => getLocation()}>Get Current Location</button>
 
       <Dropdown
         placeholder="Radius"

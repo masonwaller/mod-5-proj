@@ -26,3 +26,17 @@ export const changeRadius = (num) => {
         radius: num
     }
 }
+
+export const changeBeach = (obj) => {
+    return {
+        type: 'CURRENT',
+        current: obj
+    }
+}
+
+export const clickedBeach = (obj) => {
+    return {
+        type: 'BEACH',
+        beach: obj
+    }
+}
