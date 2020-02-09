@@ -3,13 +3,13 @@ import React, { useEffect } from "react";
 import "./Maps.css";
 import { useSelector, useDispatch } from "react-redux";
 import Search from "./Search";
-import { changeBeach, clickedBeach } from "../actions";
-import Specific from './specific'
-
+import { changeBeach, clickedBeach, allBeaches } from "../actions";
+import Specific from "./specific";
 
 function Maps(props) {
   const dispatch = useDispatch();
-  const [allBeaches, setBeaches] = React.useState([]);
+  let all = useSelector(state => state.all);
+  let currentBeach = useSelector(state => state.current)
 
   const mapStyles = {
     width: "75%",
@@ -18,7 +18,7 @@ function Maps(props) {
 
   function markerClick(place) {
     dispatch(clickedBeach(place));
-    let current = allBeaches.beach.find(beach => beach.name === place.name);
+    let current = all.beach.find(beach => beach.name === place.name);
     if (current) {
       dispatch(changeBeach(current));
     } else {
@@ -40,19 +40,19 @@ function Maps(props) {
       })
         .then(res => res.json())
         .then(data => dispatch(changeBeach(data.beach)));
+        dispatch(allBeaches(...all.beach, currentBeach))
     }
   }
 
   useEffect(() => {
     fetch(`http://localhost:3001/api/v1/beaches`)
       .then(res => res.json())
-      .then(res => setBeaches(res));
-  }, []);
-
+      .then(res => dispatch(allBeaches(res)));
+  }, [currentBeach]);
 
   return (
     <div>
-      <div className="divStyle">
+      <div className="body">
         <Map
           google={props.google}
           zoom={9}
@@ -69,8 +69,8 @@ function Maps(props) {
               position={{
                 lat: place.geometry.location.lat,
                 lng: place.geometry.location.lng
-              }}>
-            </Marker>
+              }}
+            ></Marker>
           ))}
           <Marker
             position={{
@@ -87,10 +87,7 @@ function Maps(props) {
         <h1>loading</h1>
         <h1>loading</h1>
       </div>
-      <div>
-        {(useSelector(state => state.current))? <Specific/> :
-        <Search />}
-      </div>
+      {useSelector(state => state.current) ? <Specific /> : <Search />}
     </div>
   );
 }

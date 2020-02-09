@@ -1,6 +1,7 @@
 import React from "react";
 import {useSelector, useDispatch} from 'react-redux'
 import {changeLogged} from '../actions';
+import history from '../history.js'
 
 export default function Signup() {
   const [username, setUser] = React.useState("");
@@ -26,6 +27,7 @@ export default function Signup() {
     })
       .then(res => res.json())
       .then(data => dispatch(changeLogged(data)));
+      history.pushState('/')
   }
  
   return (

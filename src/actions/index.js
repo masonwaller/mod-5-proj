@@ -40,3 +40,10 @@ export const clickedBeach = (obj) => {
         beach: obj
     }
 }
+
+export const allBeaches = (arr) => {
+    return {
+        type: 'ALL',
+        all: arr
+    }
+}

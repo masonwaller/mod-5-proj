@@ -33,10 +33,10 @@ export default function Rating() {
         if (logged) {
         let beach = {
             name: current.name,
-            temp: (current.temp + temp)/2,
-            weather: (current.weather + weather)/2,
-            pollution: (current.pollution + poll)/2,
-            surf: (current.surf + surf)/2,
+            temp: (current.temp===0)? temp : (current.temp + temp)/2,
+            weather: (current.weather===0)? weather : (current.weather + weather)/2,
+            pollution: (current.pollution===0)? poll : (current.pollution + poll)/2,
+            surf: (current.surf===0)? surf : (current.surf + surf)/2,
             address: current.address
           };
           console.log(beach)

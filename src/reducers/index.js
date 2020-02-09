@@ -5,6 +5,7 @@ import radiusReducer from './radius.js'
 import currentReducer from './current.js'
 import beachReducer from './clickedBeach.js'
 import { combineReducers } from "redux";
+import allReducer from './all.js'
 
 const allReducers = combineReducers({
   logged: isLoggedReducer,
@@ -12,7 +13,8 @@ const allReducers = combineReducers({
   address: addressReducer,
   radius: radiusReducer,
   current: currentReducer,
-  beach: beachReducer
+  beach: beachReducer,
+  all: allReducer
 });
 
 export default allReducers;

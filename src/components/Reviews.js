@@ -6,7 +6,7 @@ export default function Reviews(props) {
 
     
   return (
-    <div class="ui blue message">
+    
       <div class="ui green floating message">
         {
           useSelector(state => state.current.users).find(
@@ -18,6 +18,6 @@ export default function Reviews(props) {
         <h5>{props.review.date}</h5>
         </div>
       </div>
-    </div>
+ 
   );
 }
