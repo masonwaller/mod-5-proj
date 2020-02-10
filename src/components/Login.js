@@ -2,6 +2,7 @@ import React from "react";
 import {useSelector, useDispatch} from 'react-redux'
 import {changeLogged} from '../actions';
 import history from '../history.js'
+import {Form, Input, Button} from "semantic-ui-react";
 
 export default function Signup() {
   const [username, setUser] = React.useState("");
@@ -30,25 +31,29 @@ export default function Signup() {
   }
 //   dispatch(changeLogged(data))
   return (
-    <div>
-        <h3>Login</h3>
-      <form onSubmit={e => handleSubmit(e)}>
-        Username:
-        <input
-          type="text"
+    <div className="form">
+        <h2 className="header">Login</h2>
+        <Form onSubmit={e => handleSubmit(e)}>
+        <Form.Field required>
+          <Input type="text"
           name="username"
+          placeholder="username"
           value={username}
           onChange={e => setUser(e.target.value)}
-        ></input>
-        Password:
-        <input
+        ></Input>
+        </Form.Field>
+        <Form.Field required>
+        <Input
           type="password"
+          placeholder="password"
           name="password"
           value={password}
           onChange={e => setPass(e.target.value)}
-        ></input>
-        <input type="submit" value="Submit" />
-      </form>
+        ></Input>
+        </Form.Field>
+        <br/>
+        <Button size='big' type="submit" value="Submit">Submit</Button>
+      </Form>
     </div>
   );
 }

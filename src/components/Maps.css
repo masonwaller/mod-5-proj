@@ -1,10 +1,6 @@
 .body{
-    display: block;
     margin-left: 12.5%;
     margin-right: 12.5%;
+    border: 1px solid black;
+    height: 77.5vh;
 }
-
-.button {
-    z-index: 1;
-}
-

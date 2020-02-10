@@ -12,8 +12,8 @@ function Maps(props) {
   let currentBeach = useSelector(state => state.current)
 
   const mapStyles = {
-    width: "75%",
-    height: "75%"
+    width: "74.8%",
+    height: '497px'
   };
 
   function markerClick(place) {
@@ -52,6 +52,10 @@ function Maps(props) {
 
   return (
     <div>
+        {useSelector(state => state.current) ? <Specific /> : <Search />}
+        <br/>
+        <br/>
+
       <div className="body">
         <Map
           google={props.google}
@@ -79,15 +83,7 @@ function Maps(props) {
             }}
           />
         </Map>
-        <h1>loading</h1>
-        <h1>loading</h1>
-        <h1>loading</h1>
-        <h1>loading</h1>
-        <h1>loading</h1>
-        <h1>loading</h1>
-        <h1>loading</h1>
       </div>
-      {useSelector(state => state.current) ? <Specific /> : <Search />}
     </div>
   );
 }

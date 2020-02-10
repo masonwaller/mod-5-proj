@@ -11,11 +11,11 @@ function Top(props) {
     const dispatch = useDispatch();
     const allBeach = useSelector(state=> state.all.beach)
     const top = allBeach.filter(beach => (beach.temp + beach.weather + beach.pollution + beach.surf)/4 > 3.5)
-    console.log(top)
+
     const mapStyles = {
-        width: "75%",
-        height: "75%"
-      };
+      width: "74.8%",
+      height: '497px'
+    };
     
       function markerClick(place) {
         dispatch(clickedBeach(place));

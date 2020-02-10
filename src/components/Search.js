@@ -56,23 +56,28 @@ function Search() {
       .catch(error => console.error("Error", error));
   };
   const options = [
-    { key: 30, value: 30, text: 30 },
-    { key: 50, value: 50, text: 50 },
-    { key: 40, value: 40, text: 40 }
+    { key: 30, value: 30, text: '30 km' },
+    { key: 50, value: 50, text: '50 km' },
+    { key: 40, value: 40, text: '40 km' }
   ];
 
   return (
-    <div>
-      <button onClick={() => getLocation()}>Get Current Location</button>
-
+    <>
+      <h3 className="banner">Life's a beach, I'm just playin in da sand!</h3>
+    <div className='form__search'>
+      <div className="form__left">
       <Dropdown
-        placeholder="Radius"
+        placeholder="Beaches in this area"
         fluid
         selection
         options={options}
         onChange={e => changeRad(e)}
-      />
+        />
+        <br/>
+        <button id="button" onClick={() => getLocation()}>Get Current Location</button>
+      </div>
 
+      <div className="form__right">
       <PlacesAutocomplete
         value={useSelector(state => state.address.address)}
         onChange={e => handleChange(e)}
@@ -111,7 +116,10 @@ function Search() {
           </div>
         )}
       </PlacesAutocomplete>
+        
+      </div> 
     </div>
+    </>
   );
 }
 
