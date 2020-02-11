@@ -1,4 +1,6 @@
 .App {
+  height: calc(100vh-60px);
+  overflow-y: scroll;
   text-align: center;
 }
 

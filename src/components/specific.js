@@ -39,15 +39,6 @@ function Specific() {
         <h5>Pollution Rating: {current.pollution}/5</h5>
         <h5>Surf Rating: {current.surf}/5</h5>
       </div>
-      <div class="ui blue message">
-        {(current.reviews && current.reviews.length !== 0) ? (
-          current.reviews.map(review => (
-            <Review review={review} key={review.id} />
-          ))
-        ) : (
-          <h3>No Reviews Yet!</h3>
-        )}
-      </div>
       <Writereview />
       <Rating />
     </div>

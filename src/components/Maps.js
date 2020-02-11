@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from "react-redux";
 import Search from "./Search";
 import { changeBeach, clickedBeach, allBeaches } from "../actions";
 import Specific from "./specific";
+import Comments from './Comments'
 
 function Maps(props) {
   const dispatch = useDispatch();
@@ -52,12 +53,10 @@ function Maps(props) {
   }, [currentBeach]);
 
   return (
-    <div>
+    <>
         {useSelector(state => state.current) ? <Specific /> : <Search />}
-        <br/>
-        <br/>
 
-      <div className="body">
+      <div className="map">
         <Map
           google={props.google}
           zoom={9}
@@ -85,7 +84,8 @@ function Maps(props) {
             }}/>
         </Map>
       </div>
-    </div>
+        {useSelector(state => state.current) ? <Comments /> : null}
+    </>
   );
 }
 

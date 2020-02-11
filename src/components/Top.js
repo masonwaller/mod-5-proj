@@ -4,6 +4,7 @@ import "./Maps.css";
 import { useSelector, useDispatch } from "react-redux";
 import { changeBeach, clickedBeach, allBeaches } from "../actions";
 import Specific from './specific'
+import Comments from './Comments'
 
 
 
@@ -33,10 +34,11 @@ function Top(props) {
 
     return (
         <div>
-            <div className='body'>
+              {(useSelector(state => state.current))? <Specific/> : null}
+            <div className='map'>
         <Map
           google={props.google}
-          zoom={9}
+          zoom={3}
           style={mapStyles}
           center={{
             lat: useSelector(state => state.coords.lat),
@@ -60,16 +62,9 @@ function Top(props) {
             }}
           />
         </Map>
-        <h1>loading</h1>
-        <h1>loading</h1>
-        <h1>loading</h1>
-        <h1>loading</h1>
-        <h1>loading</h1>
-        <h1>loading</h1>
-        <h1>loading</h1>
+
       </div>
-        {(useSelector(state => state.current))? <Specific/> :
-        null}
+        {(useSelector(state => state.current))? <Comments/> : null}
         </div>
     )
 }

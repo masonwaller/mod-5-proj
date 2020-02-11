@@ -12,6 +12,7 @@ function Search() {
   const dispatch = useDispatch();
   const lat = useSelector(state => state.coords.lat);
   const lng = useSelector(state => state.coords.long);
+  let logged = useSelector(state => state.logged)
   
   function getLocation() {
     if (navigator.geolocation) {
@@ -63,7 +64,7 @@ function Search() {
 
   return (
     <>
-      <h3 className="banner">Life's a beach, I'm just playin in da sand!</h3>
+      <h3 className="banner">"Life's a beach, I'm just playin in da sand!" {(logged) ? ` - ${logged.user.username}`: null}</h3>
     <div className='form__search'>
       <div className="form__left">
       <Dropdown

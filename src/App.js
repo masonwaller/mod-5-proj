@@ -11,7 +11,7 @@ import history from './history.js'
 function App() {
 
   return (
-    <div>
+    <div className='main'>
       <Navbar />
     <div className="App">
     <Route exact path='/login'>

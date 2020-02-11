@@ -26,8 +26,7 @@ export default function Signup() {
       body: JSON.stringify({ user })
     })
       .then(res => res.json())
-      .then(data => dispatch(changeLogged(data)));
-      history.push('/')
+      .then(data => (!data.message) ? dispatch(changeLogged(data)) && history.push('/') : alert("User not found."));
   }
 //   dispatch(changeLogged(data))
   return (

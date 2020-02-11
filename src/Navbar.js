@@ -20,14 +20,15 @@ export default function Navbar() {
     <Menu>
         <Container>
         <Menu.Item >BEACH LYFE</Menu.Item>
-      <Menu.Item as="a"><NavLink to="/">Home</NavLink></Menu.Item>
+      <Menu.Item as="a" onClick={() => setCurrent()}><NavLink to="/">Home</NavLink></Menu.Item>
       <Menu.Item as="a" onClick={() => logOut()}>
         {(logged) ? <NavLink to="/">Logout</NavLink> :
         <NavLink to="/login">Login</NavLink>}
       </Menu.Item>
-      <Menu.Item as="a">
+      {(!logged) ?       <Menu.Item as="a">
         <NavLink to="/signup">Sign Up</NavLink>
-      </Menu.Item>
+      </Menu.Item> : null}
+
       <Menu.Item as="a">
         <NavLink to="/toprated" onClick={() => setCurrent()}>Top Rated</NavLink>
       </Menu.Item>
