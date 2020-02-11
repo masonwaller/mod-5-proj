@@ -10,6 +10,7 @@ function Maps(props) {
   const dispatch = useDispatch();
   let all = useSelector(state => state.all);
   let currentBeach = useSelector(state => state.current)
+  let image = `https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.uihere.com%2Ffree-cliparts%2Fsearch%3Fq%3Dyou%2BAre%2BHere%2B%2BSign&psig=AOvVaw0rDu9J1eOniCkbJPvrSy2F&ust=1581526500199000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCJDTvML7yecCFQAAAAAdAAAAABAW`
 
   const mapStyles = {
     width: "74.8%",
@@ -76,12 +77,12 @@ function Maps(props) {
               }}
             ></Marker>
           ))}
-          <Marker
-            position={{
-              lat: useSelector(state => state.coords.lat),
+        <Marker position={{lat: useSelector(state => state.coords.lat),
               lng: useSelector(state => state.coords.long)
-            }}
-          />
+            }} icon={{
+              url: 'unnamed.png',
+              scaledSize: new window.google.maps.Size(30, 30)
+            }}/>
         </Map>
       </div>
     </div>

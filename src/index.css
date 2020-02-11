@@ -45,6 +45,7 @@ code {
   background-color: pink;
   border-radius: 10px;
   border: 1px solid black;
+  outline: none;
 }
 
 .banner {
@@ -52,4 +53,8 @@ code {
   text-align: center;
   font-size: 40px;
   font-weight: 400;
+}
+
+#mason {
+  z-index: 1000000;
 }
