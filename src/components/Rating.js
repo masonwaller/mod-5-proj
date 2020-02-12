@@ -1,6 +1,7 @@
 import React from 'react'
 import { useSelector, useDispatch } from "react-redux";
 import {changeBeach} from '../actions'
+import { Card, Icon, Image } from 'semantic-ui-react'
 
 export default function Rating() {
     const [temp, setTemp] = React.useState(5)
@@ -54,8 +55,7 @@ export default function Rating() {
 
     return (
         <div>
-            <h1>Rate this beach!</h1>
-            <form onSubmit={(e) => handleSubmit(e)}>
+            {/* <form onSubmit={(e) => handleSubmit(e)}>
                 Temperature
                 <select onChange={(e)=> temperature(e)}>
                     <option value='5'>5</option>
@@ -89,7 +89,51 @@ export default function Rating() {
                     <option value='1'>1</option>
                 </select>
                 <input type='submit' />
+            </form> */}
+            <Card>
+    <Card.Content>
+      <h4>Rate this Beach!</h4>
+      <Card.Description>
+      <form onSubmit={(e) => handleSubmit(e)}>
+      <li>Temperature
+                <select onChange={(e)=> temperature(e)}>
+                    <option value='5'>5</option>
+                    <option value='4'>4</option>
+                    <option value='3'>3</option>
+                    <option value='2'>2</option>
+                    <option value='1'>1</option>
+                </select></li><br/>
+                <li>Weather
+                <select onChange={(e)=> weath(e)}>
+                    <option value='5'>5</option>
+                    <option value='4'>4</option>
+                    <option value='3'>3</option>
+                    <option value='2'>2</option>
+                    <option value='1'>1</option>
+                </select></li><br/>
+                <li>Pollution
+                <select onChange={(e)=> pollution(e)}>
+                    <option value='5'>5</option>
+                    <option value='4'>4</option>
+                    <option value='3'>3</option>
+                    <option value='2'>2</option>
+                    <option value='1'>1</option>
+                </select></li><br/>
+                <li>Surf
+                <select onChange={(e)=> surfing(e)}>
+                    <option value='5'>5</option>
+                    <option value='4'>4</option>
+                    <option value='3'>3</option>
+                    <option value='2'>2</option>
+                    <option value='1'>1</option>
+                </select></li><br/>
+                <input type='submit' />
             </form>
+      </Card.Description>
+    </Card.Content>
+    <Card.Content extra>
+    </Card.Content>
+  </Card>
         </div>
     )
 }

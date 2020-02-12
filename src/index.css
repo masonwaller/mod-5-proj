@@ -66,3 +66,27 @@ code {
   overflow: scroll;
   height: 100vh;
 }
+
+.car {
+  text-align:center;
+}
+
+.specific {
+  padding: 25px;
+}
+
+.review {
+  height: 33.5vh;
+}
+.reviewBox {
+  margin: 0px 0px 20px 0px;
+  height: 100px;
+  width: 225px;
+}
+.dateBox {
+  width: 225px
+}
+
+#header {
+  font-size: 23px;
+}
