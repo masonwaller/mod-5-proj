@@ -79,8 +79,8 @@ function Maps(props) {
         <Marker position={{lat: useSelector(state => state.coords.lat),
               lng: useSelector(state => state.coords.long)
             }} icon={{
-              url: 'unnamed.png',
-              scaledSize: new window.google.maps.Size(30, 30)
+              url: 'surf.png',
+              scaledSize: new window.google.maps.Size(50, 50)
             }}/>
         </Map>
       </div>
