@@ -58,8 +58,8 @@ function Search() {
   };
   const options = [
     { key: 30, value: 30, text: '30 km' },
-    { key: 50, value: 50, text: '50 km' },
-    { key: 40, value: 40, text: '40 km' }
+    { key: 40, value: 40, text: '40 km' },
+    { key: 50, value: 50, text: '50 km' }
   ];
 
   return (

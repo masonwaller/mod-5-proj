@@ -29,7 +29,8 @@ export default function Writereview() {
             body: JSON.stringify({ review })
           })
             .then(res => res.json())
-            .then(data => dispatch(changeBeach(data.beach)));}
+            .then(data => dispatch(changeBeach(data.beach)) && setDate(''));
+            setText('')}
             else {alert('You must be logged in to write a review!')}
     }
 
