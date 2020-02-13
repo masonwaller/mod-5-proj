@@ -15,7 +15,7 @@ function Top(props) {
 
     const mapStyles = {
       width: "74.8%",
-      height: '497px'
+      height: '77vh'
     };
     
       function markerClick(place) {
