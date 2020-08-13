@@ -4,6 +4,6 @@ This app uses JS with React and Redux in the frontend.  The backend is a rails a
 
 Created by: Mason Waller
 
-https://github.com/masonwaller/mod-5-proj-backend
+Backend repo:  https://github.com/masonwaller/mod-5-proj-backend
 
 Demo: https://www.youtube.com/watch?v=HMQmavGmqjk
